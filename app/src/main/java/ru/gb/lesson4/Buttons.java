@@ -21,9 +21,6 @@ public class Buttons {
     public String setDigitResult(String num1, String num2) {
         try {
             this.digitResult = Double.parseDouble(num1) / Double.parseDouble(num2);
-            if (digitResult % 2 == 0) {
-                return String.valueOf((int) digitResult);
-            }
         } catch (ArithmeticException e) {
             e.getStackTrace();
         }

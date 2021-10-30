@@ -84,6 +84,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button butnMultiply = findViewById(R.id.buttonMultiply);
+        if (c == null) {
+            c = " ";
+        }
         symbolsValueSetter(butnMultiply);
 
         Button butnMinus = findViewById(R.id.buttonMinus);
@@ -167,7 +170,3 @@ public class MainActivity extends AppCompatActivity {
         outState.putString(RESULT, x);
     }
 }
-
-
-
-
