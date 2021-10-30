@@ -15,12 +15,12 @@
     </style>
 
 
-    <style name="myTheme.Lesson4" parent="Theme.AppCompat">
+    <style name="myTheme.Lesson4" parent="Theme.MaterialComponents">
         <item name="android:background">@color/white</item>
         <item name="materialButtonStyle">@style/buttonColor</item>
         <item name="android:editTextColor">#FF3949AB</item>
+        <item name="android:editTextBackground">@android:color/transparent</item>
         <item name="android:textColor" tools:ignore="DuplicateDefinition">#FF3949AB</item>
-
     </style>
 
 

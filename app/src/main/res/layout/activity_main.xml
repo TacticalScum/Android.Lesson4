@@ -14,8 +14,8 @@
         android:enabled="false"
         android:gravity="end"
         android:inputType="number"
-        android:paddingEnd="10dp"
-        android:textSize="30sp"
+        android:paddingEnd="@dimen/padding_end"
+        android:textSize="@dimen/text_size"
         app:layout_constraintBottom_toTopOf="@+id/resultView"
         app:layout_constraintEnd_toStartOf="@+id/symbolView"
         app:layout_constraintHorizontal_bias="0.5"
@@ -26,11 +26,10 @@
         android:id="@+id/symbolView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:enabled="false"
         android:gravity="end"
-        android:paddingEnd="10dp"
-        android:textSize="30sp"
+        android:paddingEnd="@dimen/padding_end"
+        android:textSize="@dimen/text_size"
         app:layout_constraintBottom_toTopOf="@+id/resultView"
         app:layout_constraintEnd_toStartOf="@+id/num2View"
         app:layout_constraintHorizontal_bias="0.5"
@@ -45,8 +44,8 @@
         android:enabled="false"
         android:gravity="end"
         android:inputType="number"
-        android:paddingEnd="10dp"
-        android:textSize="30sp"
+        android:paddingEnd="@dimen/padding_end"
+        android:textSize="@dimen/text_size"
         app:layout_constraintBottom_toTopOf="@+id/resultView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -58,8 +57,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="end"
-        android:paddingEnd="10dp"
-        android:textSize="30sp"
+        android:paddingEnd="@dimen/padding_end"
+        android:textSize="@dimen/text_size"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -75,7 +74,7 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="@dimen/marginEnd"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -84,43 +83,42 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/ClearButton"
-                app:cornerRadius="0dp" />
+                app:cornerRadius="@dimen/cornerRadius" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="7"
-                app:cornerRadius="0dp" />
+                android:text="@string/button_7"
+                app:cornerRadius="@dimen/cornerRadius" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@android:color/transparent"
-                android:text="4"
-                app:cornerRadius="0dp" />
+                android:text="@string/button_4"
+                app:cornerRadius="@dimen/cornerRadius" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1"
-                app:cornerRadius="0dp" />
+                android:text="@string/button_1"
+                app:cornerRadius="@dimen/cornerRadius" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonPercent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="%"
-                app:cornerRadius="0dp" />
+                android:text="@string/percent_button"
+                app:cornerRadius="@dimen/cornerRadius" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="@dimen/marginEnd"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -128,43 +126,43 @@
                 android:id="@+id/buttonDigit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="÷"
-                app:cornerRadius="0dp" />
+                android:text="@string/digit_button"
+                app:cornerRadius="@dimen/cornerRadius" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="8"
-                app:cornerRadius="0dp" />
+                android:text="@string/button_8"
+                app:cornerRadius="@dimen/cornerRadius" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="5"
-                app:cornerRadius="0dp" />
+                android:text="@string/button_5"
+                app:cornerRadius="@dimen/cornerRadius" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2"
-                app:cornerRadius="0dp" />
+                android:text="@string/button_2"
+                app:cornerRadius="@dimen/cornerRadius" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="0"
-                app:cornerRadius="0dp" />
+                android:text="@string/button_0"
+                app:cornerRadius="@dimen/cornerRadius" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="@dimen/marginEnd"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -172,36 +170,36 @@
                 android:id="@+id/buttonMultiply"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="x"
-                app:cornerRadius="0dp" />
+                android:text="@string/multiplyButton"
+                app:cornerRadius="@dimen/cornerRadius" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="9"
-                app:cornerRadius="0dp" />
+                android:text="@string/button_9"
+                app:cornerRadius="@dimen/cornerRadius" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="6"
-                app:cornerRadius="0dp" />
+                android:text="@string/button_6"
+                app:cornerRadius="@dimen/cornerRadius" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3"
-                app:cornerRadius="0dp" />
+                android:text="@string/button_3"
+                app:cornerRadius="@dimen/cornerRadius" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonDot"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="."
-                app:cornerRadius="0dp" />
+                android:text="@string/dotButton"
+                app:cornerRadius="@dimen/cornerRadius" />
 
         </LinearLayout>
 
@@ -209,7 +207,6 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-
             android:orientation="vertical">
 
             <com.google.android.material.button.MaterialButton
@@ -217,32 +214,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="⌫"
-                app:cornerRadius="0dp" />
+                android:text="@string/eraseButton"
+                app:cornerRadius="@dimen/cornerRadius" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonMinus"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="-"
-                app:cornerRadius="0dp" />
+                android:text="@string/minusButton"
+                app:cornerRadius="@dimen/cornerRadius" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonPlus"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="+"
-                app:cornerRadius="0dp" />
+                android:text="@string/plusButton"
+                app:cornerRadius="@dimen/cornerRadius" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonEquals"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2"
-                android:text="="
-                app:cornerRadius="0dp" />
+                android:text="@string/equalsButton"
+                app:cornerRadius="@dimen/cornerRadius" />
 
         </LinearLayout>
 
