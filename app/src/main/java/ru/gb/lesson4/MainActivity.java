@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView resultView;
     String a;
     String b;
-    char c;
+    String c;
     String x;
     Buttons buttons = new Buttons();
 
@@ -38,164 +38,98 @@ public class MainActivity extends AppCompatActivity {
         resultView = findViewById(R.id.resultView);
 
         Button butn0 = findViewById(R.id.button0);
-        butn0.setOnClickListener(v -> {
-            if (a == null || a == " ") {
-                a = "0";
-            } else {
-                b = "0";
-            }
-
-            updateView();
-        });
+        buttonsValueSetter(butn0);
 
         Button butn1 = findViewById(R.id.button1);
-        butn1.setOnClickListener(v -> {
-            if (a == null || a == " ") {
-                a = "1";
-            } else {
-                b = "1";
-            }
-
-            updateView();
-        });
+        buttonsValueSetter(butn1);
 
         Button butn2 = findViewById(R.id.button2);
-        butn2.setOnClickListener(v -> {
-            if (a == null || a == " ") {
-                a = "2";
-            } else {
-                b = "2";
-            }
-            updateView();
-        });
+        buttonsValueSetter(butn2);
 
         Button butn3 = findViewById(R.id.button3);
-        butn3.setOnClickListener(v -> {
-            if (a == null || a == " ") {
-                a = "3";
-            } else {
-                b = "3";
-            }
-            updateView();
-        });
+        buttonsValueSetter(butn3);
 
         Button butn4 = findViewById(R.id.button4);
-        butn4.setOnClickListener(v -> {
-            if (a == null || a == " ") {
-                a = "4";
-            } else {
-                b = "4";
-            }
-            updateView();
-        });
+        buttonsValueSetter(butn4);
 
         Button butn5 = findViewById(R.id.button5);
-        butn5.setOnClickListener(v -> {
-            if (a == null || a == " ") {
-                a = "5";
-            } else {
-                b = "5";
-            }
-            updateView();
-        });
+        buttonsValueSetter(butn5);
 
         Button butn6 = findViewById(R.id.button6);
-        butn6.setOnClickListener(v -> {
-            if (a == null || a == " ") {
-                a = "6";
-            } else {
-                b = "6";
-            }
-            updateView();
-        });
+        buttonsValueSetter(butn6);
 
         Button butn7 = findViewById(R.id.button7);
-        butn7.setOnClickListener(v -> {
-            if (a == null || a == " ") {
-                a = "7";
-            } else {
-                b = "7";
-            }
-            updateView();
-        });
+        buttonsValueSetter(butn7);
 
         Button butn8 = findViewById(R.id.button8);
-        butn8.setOnClickListener(v -> {
-            if (a == null || a == " ") {
-                a = "8";
-            } else {
-                b = "8";
-            }
-            updateView();
-        });
+        buttonsValueSetter(butn8);
 
         Button butn9 = findViewById(R.id.button9);
-        butn9.setOnClickListener(v -> {
-            if (a == null || a == " ") {
-                a = "9";
-            } else {
-                b = "9";
-            }
-            updateView();
-        });
+        buttonsValueSetter(butn9);
 
         Button butnPlus = findViewById(R.id.buttonPlus);
-        butnPlus.setOnClickListener(v -> {
-            c = '+';
-            updateView();
-        });
+        symbolsValueSetter(butnPlus);
 
         Button butnDigit = findViewById(R.id.buttonDigit);
-        butnDigit.setOnClickListener(v -> {
-            c = '÷';
-            updateView();
-        });
+        symbolsValueSetter(butnDigit);
 
         Button butnClear = findViewById(R.id.buttonClear);
         butnClear.setOnClickListener(v -> {
             a = " ";
             b = " ";
-            c = ' ';
+            c = " ";
             x = " ";
             updateView();
             updateResultView();
         });
 
         Button butnMultiply = findViewById(R.id.buttonMultiply);
-        butnMultiply.setOnClickListener(v -> {
-            c = 'x';
-            updateView();
-        });
+        symbolsValueSetter(butnMultiply);
 
         Button butnMinus = findViewById(R.id.buttonMinus);
-        butnMinus.setOnClickListener(v -> {
-            c = '-';
-            updateView();
-        });
+        symbolsValueSetter(butnMinus);
 
         Button butnEquals = findViewById(R.id.buttonEquals);
         butnEquals.setOnClickListener(v -> {
-            if (a != null && b != null && c == '+') {
+            if (a != null && b != null && c.equals("+")) {
                 x = buttons.setPlusResult(a, b);
                 updateResultView();
             }
 
-            if (a != null && b != null && c == '-') {
+            if (a != null && b != null && c.equals("-")) {
                 x = buttons.setMinusResult(a, b);
                 updateResultView();
             }
 
-            if (b.equals("0") && c == ('÷')) {
+            if (b.equals("0") && c.equals("÷")) {
                 resultView.setText("Ошибка");
-            } else if (a != null && c == '÷') {
+            } else if (a != null && c.equals("÷")) {
                 x = buttons.setDigitResult(a, b);
                 updateResultView();
             }
 
-            if (a != null && b != null && c == 'x') {
+            if (a != null && b != null && c.equals("x")) {
                 x = buttons.setMultiplyResult(a, b);
                 updateResultView();
             }
+        });
+    }
+
+    private void buttonsValueSetter(Button button) {
+        button.setOnClickListener(v -> {
+            if (a == null || a.equals(" ")) {
+                a = button.getText().toString();
+            } else {
+                b = button.getText().toString();
+            }
+            updateView();
+        });
+    }
+
+    private void symbolsValueSetter(Button button) {
+        button.setOnClickListener(v -> {
+            c = button.getText().toString();
+            updateView();
         });
     }
 
@@ -218,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
         super.onRestoreInstanceState(savedInstanceState);
         a = savedInstanceState.getString(NUMBER_1);
         b = savedInstanceState.getString(NUMBER_2);
-        c = savedInstanceState.getChar(SYMBOL);
+        c = savedInstanceState.getString(SYMBOL);
         updateView();
         x = savedInstanceState.getString(RESULT);
         updateResultView();
@@ -229,7 +163,11 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
         outState.putString(NUMBER_1, a);
         outState.putString(NUMBER_2, b);
-        outState.putChar(SYMBOL, c);
+        outState.putString(SYMBOL, c);
         outState.putString(RESULT, x);
     }
 }
+
+
+
+
